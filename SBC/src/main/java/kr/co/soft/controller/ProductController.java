@@ -10,10 +10,16 @@ import kr.co.soft.mapper.ProductMapper;
 
 @SuppressWarnings({"unchecked", "rawtypes"})
 @RestController	//@Controller + @ResponseBody
-public class ShopController {
+public class ProductController {
 
 	@Autowired
 	ProductMapper productMapper;
+	
+	@GetMapping("/product")
+	public String product(){
+		
+		return "product";
+	}
 	
 	@GetMapping("/products")
 	public List getAllProductList(){
