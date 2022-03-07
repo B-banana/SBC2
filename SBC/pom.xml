@@ -72,14 +72,6 @@
 			    <version>${org.springframework-version}</version>
 			</dependency>
 			
-			<!-- lombok -->
-			<dependency>
-			    <groupId>org.projectlombok</groupId>
-			    <artifactId>lombok</artifactId>
-			    <version>1.18.22</version>
-			    <scope>provided</scope>
-			</dependency>
-			
 			<!-- JSR250(javax.annotation-api) -->
 			<dependency>
 			    <groupId>javax.annotation</groupId>
@@ -141,6 +133,14 @@
 			  <groupId>com.github.iamport</groupId>
 			  <artifactId>iamport-rest-client-java</artifactId>
 			  <version>${com.github.iamport-version}</version>
+			</dependency>
+						
+			<!-- lombok -->
+			<dependency>
+			    <groupId>org.projectlombok</groupId>
+			    <artifactId>lombok</artifactId>
+			    <version>1.18.22</version>
+			    <scope>provided</scope>
 			</dependency>
 			
 	  </dependencies>

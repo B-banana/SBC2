@@ -1,0 +1,39 @@
+-- 회원가입시, 로그 테이블 생성
+-- 회원정보삭제, 업데이트 시 , 업데이트 시간 업데이트
+
+create or replace TRIGGER logAfterUserCreate
+after insert or delete or update on userlist for each row
+
+begin
+    if inserting then
+    insert into user_log 
+    values (:new.user_id, to_char(sysdate, 'YYYY-MM-DD HH24:MI:SS'), 
+    to_char(sysdate, 'YYYY-MM-DD HH24:MI:SS'), to_char(sysdate, 'YYYY-MM-DD HH24:MI:SS'));
+
+    elsif deleting then
+    update user_log
+    set update_time = to_char(sysdate, 'YYYY-MM-DD HH24:MI:SS')
+    where user_log.user_id = userlist.user_id;
+
+    elsif updating then
+    update user_log
+    set update_time = to_char(sysdate, 'YYYY-MM-DD HH24:MI:SS')
+    where user_log.user_id = userlist.user_id;
+    
+    end if;
+
+end;
+/
+
+-- -----------------------------------------------------
+-- 회원가입시, 멤버쉽 테이블도 같이 생성.
+create or replace TRIGGER membershipAfterUserCreate
+after insert on userlist for each row
+
+begin
+
+    insert into membership
+    values (:new.custid, null, null, null, null, null, null, null, null, null);
+    
+end;
+/
