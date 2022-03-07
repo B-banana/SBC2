@@ -19,7 +19,7 @@ import kr.co.soft.mapper.ProductMapper;
 
 @Configuration	//<annotation-driven/>와 같음
 @EnableWebMvc //controller어노테이션이 셋팅되어 있는 클래스 로드
-@ComponentScan("kr.co.soft.controller") //compoment어노테이션이 셋팅되어 있는 클래스 로드
+@ComponentScan({"kr.co.soft.controller", "kr.co.soft.dao", "kr.co.soft.service"}) //compoment어노테이션이 셋팅되어 있는 클래스 로드
 @PropertySource("/WEB-INF/properties/db.properties")
 public class ServletAppContext implements WebMvcConfigurer{
 

@@ -11,7 +11,7 @@ import kr.co.soft.mapperVO.ProductVO;
 
 public interface ProductMapper {
 
-	@Select("select PRODUCT_ID,PRODUCT_NAME,PRICE from sbc.product")
+	@Select("select product_id,product_name,price from sbc.product")
 	List<ProductVO> getAllProductList();
 
 }

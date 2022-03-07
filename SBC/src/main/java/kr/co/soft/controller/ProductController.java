@@ -3,29 +3,30 @@ package kr.co.soft.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import kr.co.soft.mapper.ProductMapper;
+import kr.co.soft.mapperVO.ProductVO;
+import kr.co.soft.service.ProductService;
 
-@SuppressWarnings({"unchecked", "rawtypes"})
-@RestController	//@Controller + @ResponseBody
+
+@Controller
+@RequestMapping("/product")
 public class ProductController {
-
+	
 	@Autowired
-	ProductMapper productMapper;
+	ProductService service;
 	
-	@GetMapping("/product")
-	public String product(){
+	@GetMapping("/main")
+	public String product(Model model){
 		
-		return "product";
-	}
-	
-	@GetMapping("/products")
-	public List getAllProductList(){
-		System.out.println("Request Method : GET");
+		List<ProductVO> productList = service.getAllProductList();
+		model.addAttribute("productList", productList);
 		
-		return productMapper.getAllProductList();
+		return "product/main";
 	}
+
 	
 }
