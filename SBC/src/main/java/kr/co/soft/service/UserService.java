@@ -51,6 +51,24 @@ public class UserService {
 		}
 
 	}
+	
+	public void getModifyUserInfo(UserBean modifyUserInfo) {
+		
+		UserBean tempModifyUserBean = userDao.getModifyUserInfo(loginUserBean.getUser_idx());
+		
+		modifyUserInfo.setUser_id(tempModifyUserBean.getUser_id());
+		modifyUserInfo.setUser_name(tempModifyUserBean.getUser_name());
+		modifyUserInfo.setUser_idx(loginUserBean.getUser_idx());
+		
+	}
+	
+	public void ModifyUserInfo(UserBean modifyUserBean) {
+		
+		//로그인한 유저번호 호출하여 저장
+		modifyUserBean.setUser_id(loginUserBean.getUser_id());
+		userDao.ModifyUserInfo(modifyUserBean);
+	}
+		
 
 	
 	

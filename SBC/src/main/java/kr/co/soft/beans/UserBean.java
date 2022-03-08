@@ -12,17 +12,17 @@ public class UserBean {
 	
 	private int user_idx;
 	
+	@Size(min = 2, max = 8)
+	@Pattern(regexp = "[가-힣]*")
+	private String user_name;
+	
 	@Size(min = 4, max = 20)
 	@Pattern(regexp = "[a-zA-Z0-9]*")
 	private String user_id;
 	
 	@Size(min = 4, max = 8)
 	@Pattern(regexp = "[a-zA-Z0-9]*")
-	private String user_password;
-	
-	private String authority;
-	
-	private int enabled;
+	private String user_pw;
 	
 	@Size(min = 4, max = 8)
 	@Pattern(regexp = "[a-zA-Z0-9]*")
@@ -38,5 +38,7 @@ public class UserBean {
 		this.userIdExist = false;
 		this.userLogin = false;	//초기값 : 로그인이 안된 상태
 	}
-
+	
+	
+	
 }
