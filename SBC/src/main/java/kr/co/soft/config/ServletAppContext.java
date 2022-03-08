@@ -18,10 +18,17 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import kr.co.soft.mapper.UserMapper;
 
+<<<<<<< HEAD
 @Configuration // <annotation-driven>과 같은
 @ComponentScan("kr.co.soft.controller")
 @ComponentScan("kr.co.soft.dao")
 @ComponentScan("kr.co.soft.service")
+=======
+
+@Configuration	//<annotation-driven/>와 같음
+@EnableWebMvc //controller어노테이션이 셋팅되어 있는 클래스 로드
+@ComponentScan({"kr.co.soft.controller", "kr.co.soft.dao", "kr.co.soft.service"}) //compoment어노테이션이 셋팅되어 있는 클래스 로드
+>>>>>>> upstream/Minju
 @PropertySource("/WEB-INF/properties/db.properties")
 @EnableWebMvc // controller어노테이션이 셋팅되어 있는 클래스 로드
 public class ServletAppContext implements WebMvcConfigurer {
