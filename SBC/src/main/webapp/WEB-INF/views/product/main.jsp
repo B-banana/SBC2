@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var='root' value='${pageContext.request.contextPath}/'/>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,11 +14,9 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="../css/product-style.css" rel="stylesheet" />
-    </head>
+        <link href="${root }css/product-style.css" rel="stylesheet" />
+    </head>    
     <body>
-    
-    
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
@@ -69,7 +68,7 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="../images/product/ac-003.png" width="450" height="300" />
+                            <img class="card-img-top" src="${root }images/product/ac-003.png" width="450" height="300" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -81,7 +80,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">장바구니 담기</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" onclick="addToCart()">장바구니 담기</a></div>
                             </div>
                         </div>
                     </div>

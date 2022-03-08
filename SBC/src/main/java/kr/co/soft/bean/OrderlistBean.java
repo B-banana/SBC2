@@ -1,11 +1,11 @@
-package kr.co.soft.mapperVO;
+package kr.co.soft.bean;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class OrderlistVO {
+public class OrderlistBean {
 	
 	private String merchant_uid;
 	private String user_id;
@@ -19,11 +19,11 @@ public class OrderlistVO {
 	private int shipping;
 	private int total_amount;
 	
-	public OrderlistVO() {
+	public OrderlistBean() {
 		
 	}
 	
-	public OrderlistVO(String merchant_uid, String user_id, String phone, String email, 
+	public OrderlistBean(String merchant_uid, String user_id, String phone, String email, 
 			String order_date, int postcode, String address1, String address2,
 			int total_price, int shipping, int total_amount) {
 		this.merchant_uid = merchant_uid;

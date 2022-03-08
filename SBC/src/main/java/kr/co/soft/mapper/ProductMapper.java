@@ -7,11 +7,11 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import kr.co.soft.mapperVO.ProductVO;
+import kr.co.soft.bean.ProductBean;
 
 public interface ProductMapper {
 
 	@Select("select product_id,product_name,price from sbc.product")
-	List<ProductVO> getAllProductList();
+	List<ProductBean> getAllProductList();
 
 }

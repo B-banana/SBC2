@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import kr.co.soft.mapperVO.ProductVO;
+import kr.co.soft.bean.ProductBean;
 import kr.co.soft.service.ProductService;
 
 
@@ -22,7 +22,7 @@ public class ProductController {
 	@GetMapping("/main")
 	public String product(Model model){
 		
-		List<ProductVO> productList = service.getAllProductList();
+		List<ProductBean> productList = service.getAllProductList();
 		model.addAttribute("productList", productList);
 		
 		return "product/main";

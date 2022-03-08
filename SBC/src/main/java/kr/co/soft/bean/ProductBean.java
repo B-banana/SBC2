@@ -1,11 +1,11 @@
-package kr.co.soft.mapperVO;
+package kr.co.soft.bean;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class ProductVO {
+public class ProductBean {
 
 	private String product_id;
 	private String product_name;
@@ -13,11 +13,11 @@ public class ProductVO {
 	private int stock;
 	private String product_category;
 	
-	public ProductVO() {
+	public ProductBean() {
 		
 	}
 	
-	public ProductVO(String product_id, String product_name, int price, int stock, String product_category) {
+	public ProductBean(String product_id, String product_name, int price, int stock, String product_category) {
 		this.product_id = product_id;
 		this.product_name = product_name;
 		this.price = price;
